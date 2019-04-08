@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/products.css")
+    body
+        header.main-header
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.menu-header_item
+                        a.active(href="/") Shop
+                    li.menu-header__item
+                        a(href="/admin/add-product") Add Product
+        main
+            if prods.length > 0
+                div.grid
+                    each product in prods
+                        article.card.product-item
+                            header.card__header
+                                h1.product__title #{product.title}
+                            div.card__image
+                                img(src="https://statics.boyner.com.tr/mnresize/900/1254/productimages/5002364911_800_13.jpg", alt="Heello")
+                            div.card__content
+                                h2.product__image $19.99
+                                p.product__description A very interesting
+                            div.card_actions
+                                button.btn Add to Cart
+            else 
+                h1 There is no item.
+                    
+
